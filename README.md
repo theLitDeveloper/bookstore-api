@@ -3,11 +3,11 @@ This is a simple mock service for testing / evaluation purposes. It works out of
 
 The service exposes four endpoints:
 |||
-|-|-|
-|/books|Bookstore|
-|/metrics|Prometheus metrics|
-|/version|Version info|
-|/health|Simple health check|
+|---|---|
+|**/books**|Bookstore|
+|**/metrics**|Prometheus metrics|
+|**/version**|Version info|
+|**/health**|Simple health check|
 
 A OpenAPI v3 doc for bookstore can be found here: [bookstore.yaml](bookstore.yaml)
 
