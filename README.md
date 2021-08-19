@@ -2,12 +2,11 @@
 This is a fairly simple RESTful service for testing / evaluation purposes. It works out of the box without any external dependencies and comes with support for Prometheus.
 
 The service exposes four endpoints:
-|Endpoint|Description|
-|---|---|
-|**/books**|Bookstore|
-|**/metrics**|Prometheus metrics|
-|**/version**|Version info|
-|**/health**|Simple health check|
+
+- **/books**    Bookstore
+- **/metrics**  Prometheus metrics
+- **/version**  Version info
+- **/health**   Simple health check
 
 **A OpenAPI v3 doc for bookstore can be found here: [bookstore.yaml](bookstore.yaml)**
 
