@@ -8,7 +8,7 @@ The service exposes four endpoints:
 - **/version**  Version info
 - **/health**   Health check
 
-**A OpenAPI v3 doc for bookstore can be found here: [bookstore.yaml](bookstore/api/bookstore.yaml)**
+**A OpenAPI v3 doc for bookstore can be found here: [bookstore.yaml](api/bookstore.yaml)**
 
 ## Usage
 Set nessessary env var for version info first:
@@ -29,5 +29,5 @@ curl http://localhost:8080/version
 ```
 You should see a JSON object like this:
 ```
-{"version":"v0.2.0"}
+{"version":"v0.2.1"}
 ```
