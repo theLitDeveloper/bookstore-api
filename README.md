@@ -1,4 +1,4 @@
-# Bookstore Sample Service
+# Bookstore API
 This is a fairly simple RESTful service for testing / evaluation purposes. It works out of the box without any external dependencies and comes with support for Prometheus.
 
 The service exposes four endpoints:
@@ -29,5 +29,5 @@ curl http://localhost:8080/version
 ```
 You should see a JSON object like this:
 ```
-{"version":"v0.2.1"}
+{"version":"v0.2.2"}
 ```
