@@ -1,4 +1,4 @@
-module gitlab.simplyadmin.de/sdGolang/bookstore-sample-service
+module gitlab.simplyadmin.de/sdGolang/bookstore-api
 
 go 1.17
 

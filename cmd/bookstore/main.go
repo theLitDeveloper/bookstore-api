@@ -1,7 +1,7 @@
 package main
 
 import (
-	"gitlab.simplyadmin.de/sdGolang/bookstore-sample-service/pkg/bookstore"
+	"gitlab.simplyadmin.de/sdGolang/bookstore-api/pkg/bookstore"
 )
 
 func main() {

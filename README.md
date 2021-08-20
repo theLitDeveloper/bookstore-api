@@ -29,5 +29,5 @@ curl http://localhost:8080/version
 ```
 You should see a JSON object like this:
 ```
-{"version":"v0.2.2"}
+{"version":"v0.2.3"}
 ```
