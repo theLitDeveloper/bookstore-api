@@ -1,0 +1,8 @@
+.DS_Store
+api
+tmp
+.air.toml
+.gitignore
+README.md
+scratch.txt
+Dockerfile
