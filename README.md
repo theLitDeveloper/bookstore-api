@@ -1,5 +1,5 @@
 # Bookstore API
-This is a fairly simple RESTful service for testing / evaluation purposes. It works out of the box without any external dependencies and comes with support for Prometheus.
+A fairly simple RESTful service for testing / evaluation purposes, e.g. on a K8s cluster. It works without any external dependencies and provides Prometheus out of the box.
 
 The service exposes four endpoints:
 

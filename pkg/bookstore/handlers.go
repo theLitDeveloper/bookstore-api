@@ -8,12 +8,13 @@ import (
 	"github.com/labstack/echo/v4"
 )
 
-// BooksHandler is returning a JSON object with all books in store
-func BooksHandler(ctx echo.Context) error {
+// booksHandler is returning all books in store
+func booksHandler(ctx echo.Context) error {
 	return ctx.JSON(http.StatusOK, Books)
 }
 
-func GetBookByIDHandler(ctx echo.Context) error {
+// getBookByIDHandler is returning a single book by ID
+func getBookByIDHandler(ctx echo.Context) error {
 	id, err := strconv.Atoi(ctx.Param("id"))
 	if err != nil {
 		return badRequest(ctx)
@@ -26,7 +27,8 @@ func GetBookByIDHandler(ctx echo.Context) error {
 	return notFound(ctx)
 }
 
-func UpdateBookHandler(ctx echo.Context) error {
+// updateBookHandler updates data for a particular book
+func updateBookHandler(ctx echo.Context) error {
 	var err error
 
 	id, err := strconv.Atoi(ctx.Param("id"))
@@ -60,7 +62,8 @@ func UpdateBookHandler(ctx echo.Context) error {
 	return ctx.JSON(http.StatusAccepted, updBook)
 }
 
-func AddBookHandler(ctx echo.Context) error {
+// addBookHandler adds a book to the store
+func addBookHandler(ctx echo.Context) error {
 	bdy := ctx.Request().Body
 	defer bdy.Close()
 	var book Book
@@ -74,7 +77,8 @@ func AddBookHandler(ctx echo.Context) error {
 	return ctx.JSON(http.StatusCreated, book)
 }
 
-func DeleteBookHandler(ctx echo.Context) error {
+// deleteBookHandler removes a book from the store
+func deleteBookHandler(ctx echo.Context) error {
 	id, err := strconv.Atoi(ctx.Param("id"))
 	if err != nil {
 		return badRequest(ctx)
@@ -94,10 +98,12 @@ func DeleteBookHandler(ctx echo.Context) error {
 	return ctx.NoContent(http.StatusNoContent)
 }
 
+// badRequest status 400 HTTP response
 func badRequest(ctx echo.Context) error {
 	return ctx.String(http.StatusBadRequest, "Bad request")
 }
 
+// notFound status 404 HTTP response
 func notFound(ctx echo.Context) error {
 	resp := make(map[string]string)
 	resp["message"] = "Not Found"

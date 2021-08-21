@@ -4,10 +4,10 @@ import "github.com/labstack/echo/v4"
 
 func initRoutes(e *echo.Echo) {
 
-	e.GET("/books", BooksHandler)
-	e.POST("/books", AddBookHandler)
-	e.GET("/books/:id", GetBookByIDHandler)
-	e.DELETE("/books/:id", DeleteBookHandler)
-	e.PATCH("/books/:id", UpdateBookHandler)
+	e.GET("/books", booksHandler)
+	e.POST("/books", addBookHandler)
+	e.GET("/books/:id", getBookByIDHandler)
+	e.DELETE("/books/:id", deleteBookHandler)
+	e.PATCH("/books/:id", updateBookHandler)
 
 }
