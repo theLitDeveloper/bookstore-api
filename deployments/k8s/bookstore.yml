@@ -1,0 +1,52 @@
+apiVersion: v1
+kind: Namespace
+metadata:
+  name: bookstore-api
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name:  bookstore-api-deployment
+  namespace: bookstore-api
+  labels:
+    app: bookstore-api
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: bookstore-api
+  template:
+    metadata:
+      labels:
+        app: bookstore-api
+    spec:
+      containers:
+        - name: bookstore-api
+          image: <image>:<tag>
+          env:
+            - name: LATEST_GIT_TAG
+              value: <tag>
+          ports:
+          - containerPort: 8080
+          # resources:
+          #       requests: 
+          #         cpu: "250m"
+          #         memory: "250 Mi"
+          #       limits:
+          #         cpu: "500m"
+          #         memory: "500 Mi"
+---
+kind: Service
+apiVersion: v1
+metadata:
+  name:  bookstore-api-service
+  namespace: bookstore-api
+spec:
+  selector:
+    app:  bookstore-api
+  type:  LoadBalancer
+  ports:
+  - protocol:  TCP
+    port:  8080
+    targetPort:  8080
+    nodePort: 30000

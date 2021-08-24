@@ -31,3 +31,21 @@ You should see a JSON object like this:
 ```
 {"version":"v0.2.3"}
 ```
+
+## Deployments
+Edit deployments/k8s/bookstore.yml, find image and env in Deployment section and replace placeholders with your values:
+```
+---
+apiVersion: apps/v1
+kind: Deployment
+...
+spec:
+...
+  spec:
+    containers:
+      - name: bookstore-api
+        image: <image>:<tag>
+        env:
+          - name: LATEST_GIT_TAG
+            value: <tag>
+```
