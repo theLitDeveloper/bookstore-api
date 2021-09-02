@@ -1,16 +1,17 @@
 FROM golang:1.16-alpine AS builder
 
-LABEL vendor=SimplyDelivery
+LABEL vendor=thelitdeveloper
+LABEL maintainer=SimplySteph
 
 RUN set -ex; \
     apk update; \
     apk add --no-cache git
 
-WORKDIR ${GOPATH}/src/gitlab.simplyadmin.de/sdGolang/bookstore-api/
+WORKDIR ${GOPATH}/src/thelitdeveloper.com/bookstore-api/
 
-ARG latest_git_tag
+ARG tag
 
-ENV CGO_ENABLED=0 LATEST_GIT_TAG=${latest_git_tag}
+ENV CGO_ENABLED=0 TAG=${tag}
 
 COPY go.mod .
 COPY go.sum .

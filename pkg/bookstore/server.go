@@ -26,7 +26,7 @@ func Run() {
 	// Version info
 	e.GET("/version", func(ctx echo.Context) error {
 		resp := make(map[string]interface{})
-		resp["version"] = os.Getenv("LATEST_GIT_TAG")
+		resp["version"] = os.Getenv("TAG")
 		return ctx.JSON(http.StatusOK, resp)
 	})
 

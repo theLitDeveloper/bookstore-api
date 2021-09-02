@@ -24,17 +24,17 @@ spec:
         - name: bookstore-api
           image: <image>:<tag>
           env:
-            - name: LATEST_GIT_TAG
+            - name: TAG
               value: <tag>
           ports:
           - containerPort: 8080
-          # resources:
-          #       requests: 
-          #         cpu: "250m"
-          #         memory: "250 Mi"
-          #       limits:
-          #         cpu: "500m"
-          #         memory: "500 Mi"
+          resources:
+                requests: 
+                  cpu: "100m"
+                  memory: "250 Mi"
+                limits:
+                  cpu: "100m"
+                  memory: "500 Mi"
 ---
 kind: Service
 apiVersion: v1
